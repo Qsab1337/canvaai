@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+@font-face {
+  font-family: 'Poppins Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Poppins Regular'),
+    url(chrome-extension://__MSG_@@extension_id__/fonts/Poppins-Regular.woff)
+      format('woff');
+}
+
+.custom-question-button {
+  margin-left: 20px;
+  background-color: #00172d;
+}
+
+.myquizmate-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+  pointer-events: none;
+  font-family: 'Poppins Regular', sans-serif !important;
+}
+
+.myquizmate-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #003162;
+  height: 5% !important;
+  border-radius: 20px;
+}
+
+.myquizmate-popup-logo {
+  width: 110px;
+  height: auto;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.myquizmate-popup-content {
+  padding-bottom: 20px;
+  border-radius: 20px;
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+  box-shadow: 0px 5px 15px rgb(20, 120, 242);
+  pointer-events: auto;
+  transition: transform 0.3s, opacity 0.3s;
+  transform: scale(1);
+  opacity: 1;
+  color: #fff;
+  font-family: 'Poppins Regular', sans-serif;
+}
+
+.myquizmate-popup-content-child {
+  background-image: linear-gradient(to bottom, rgb(0, 7, 14), rgb(1, 80, 161));
+}
+
+.myquizmate-popup-header-text {
+  text-align: center !important;
+  font-size: 20px !important;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: auto; /* Horizontally center (left) */
+  margin-right: auto; /* Horizontally center (right) */
+  padding: 5px 5px !important; /* Padding to give some space around the text inside the box */
+  background-color: #003a73;
+  border-radius: 15px;
+  color: #fff !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+  width: 60%;
+  box-shadow: 4px 4px 15px 4px rgba(0, 0, 0, 0.25);
+}
+
+.myquizmate-popup-close {
+  color: white;
+  font-size: 24px;
+  background-color: #1478f2;
+  border-radius: 50%;
+  width: 22px; /* Set width for square shape */
+  height: 22px; /* Set height for square shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: color 0.3s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.myquizmate-popup-close::before {
+  content: '\00D7'; /* Unicode for the multiplication sign (looks like X) */
+  display: block;
+  transform: translate(0px, 1px); /* Adjust these values as needed */
+}
+
+.myquizmate-popup-close:hover,
+.myquizmate-popup-close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.myquizmate-popup-answer-text {
+  font-size: 16px;
+  margin: 20px 0;
+  line-height: 1.6;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins Regular', sans-serif;
+  font-weight: normal;
+  padding: 10px;
+}
+
+/* Styling for open-popup (answer popup) */
+.open-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+  pointer-events: none;
+  font-family: 'Poppins Regular', sans-serif !important;
+}
+
+.open-popup-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: #003162 !important;
+  height: 30px !important;
+  border-radius: 20px !important;
+}
+
+.open-popup-content {
+  border-radius: 20px !important;
+  width: 60% !important;
+  max-width: 300px !important;
+  height: auto !important;
+  box-shadow: 0px 5px 15px rgb(20, 120, 242) !important;
+  pointer-events: auto !important;
+  transition: transform 0.3s, opacity 0.3s !important;
+  transform: scale(1) !important;
+  opacity: 1 !important;
+  color: #fff !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+  overflow: hidden !important;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0, 7, 14),
+    rgb(1, 80, 161)
+  ) !important;
+}
+
+.open-popup-header-text {
+  text-align: center !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 5px 5px !important;
+  background-color: #003a73 !important;
+  border-radius: 15px !important;
+  color: #fff !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+  width: 70% !important;
+  box-shadow: 4px 4px 15px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.open-popup-close {
+  color: white !important;
+  font-size: 24px !important;
+  background-color: #1478f2 !important;
+  border-radius: 50% !important;
+  width: 22px !important;
+  height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  transition: color 0.3s !important;
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.open-popup-close::before {
+  content: '\00D7' !important;
+  display: block !important;
+  transform: translate(0px, 1px);
+}
+
+.open-popup-answer-text {
+  font-size: 16px !important;
+  margin: 20px 0 !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  color: white !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+  font-weight: normal !important;
+  padding-top: 10px !important;
+}
+
+.open-popup-input {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin: auto;
+  width: 70% !important;
+  padding: 8px 15px !important;
+  border: 1px solid #83a9cf !important;
+  border-radius: 5px !important;
+  resize: vertical !important;
+  font-size: 16px !important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1) !important;
+  transition: border-color 0.3s ease !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+  height: auto;
+  margin-bottom: 10px !important;
+}
+
+.open-popup-input::placeholder {
+  color: #b2c9e0 !important;
+  padding-left: 5px !important;
+  padding-top: 2px !important;
+}
+
+.open-popup-input:focus {
+  border-color: #1478f2 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  outline: none !important;
+  color: black;
+}
+
+.open-popup-button {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 10px 20px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  background-color: #1478f2 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.open-popup-button:hover {
+  background-color: #19547b !important;
+}
+
+.open-popup-button:focus {
+  outline: none !important;
+}
+
+.open-popup-subtext {
+  text-align: center !important;
+  font-size: 14px !important;
+  color: white !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  padding: 10px !important;
+  font-weight: normal !important;
+  font-family: 'Poppins Regular', sans-serif !important;
+}
+
+/* Additional styles for popup isolation */
+body .myquizmate-popup .myquizmate-popup-content {
+  z-index: 1000001 !important;
+}
+
+.loading-dot {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid white; /* change this color to match your theme */
+  animation: spin 1s linear infinite;
+}
+
+
+.myquizmate-popup-explain-btn {
+  display: block;
+  /* Make the button fill the container */
+  width: auto;
+  /* Adjust width as necessary */
+  margin: 10px auto;
+  /* Center button horizontally, adjust margin as needed */
+  padding: 8px 20px;
+  /* Padding inside the button */
+  font-size: 20px !important;
+  font-weight: 600;
+  /* Button text weight */
+  color: #fff;
+  /* Button text color */
+  background-color: #1478f2;
+  /* Button background color */
+  border: none;
+  /* No border */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Change mouse cursor to pointer */  font-size: 20px !important;
+  font-weight: 600;
+  text-align: center;
+  /* Ensure text is centered */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for hover effect */
+  font-family: 'Poppins Regular', sans-serif;
+  /* Font family */
+}
+
+.myquizmate-popup-explain-btn:hover {
+  background-color: #19547b;
+  /* Darker shade on hover */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
